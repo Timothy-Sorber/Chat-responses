@@ -1,0 +1,28 @@
+on chat:
+ {crtoggled} is true
+ if message is "cringe":
+  kill player
+  broadcast "[&cCR<white>]: &c%player% died of cringe"
+ else if message contains "send me to brazil":
+  brazil(player)
+ else if message is "whats 9 + 1?":
+  broadcast "[&cCR<white>]: 21"
+  wait 2 seconds
+  kill player
+ else if message is "kick me!":
+  kick player due to "here you go!"
+ else if message is "lag" or "lagg":
+  kick player due to "Does that fix it?"
+  
+on load:
+ set {crtoggled} to true
+
+command /crtoggle:
+ permission: crtoggle.sk
+ trigger:
+  if {crtoggled} is true:
+   message "[&cCR<white>]: Chat responses turned &coff!"
+   set {crtoggled} to false
+  else:
+   message "[&cCR<white>]: Chat responses turned &aon!"
+   set {crtoggled} to true
